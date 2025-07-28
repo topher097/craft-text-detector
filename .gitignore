@@ -146,3 +146,11 @@ dmypy.json
 
 # Cython debug symbols
 cython_debug/
+
+# devenv
+.devenv
+.devenv.flake.lock
+.python-version
+
+tmp
+*.onnx
