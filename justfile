@@ -5,7 +5,6 @@ set script-interpreter := ['uv', 'run', '--script']
 # set shell := ['bash', '-e']
 
 # Define variables and functions, these are set as environment variables during each invocation of the justfile
-io_dir := invocation_directory() + "/IO"
 user := file_stem(home_directory())
 curr_time := datetime("%Y%m%dT%H%M%S")
 NIXPKGS_ALLOW_UNFREE := "1"
@@ -47,6 +46,13 @@ get-package-versions:
     print(f"Tensorflow version: {tf.__version__}")
     print(f"Keras version: {keras.__version__}")
     print(f"NumPy version: {numpy.__version__}")
+
+onnx2tf:
+    docker run --rm -it \
+        -v `pwd`:/workdir \
+        -w /workdir \
+        docker.io/pinto0309/onnx2tf:latest
+# Then run: onnx2tf -i model.onnx
 
 # Git add all files
 gadd:
