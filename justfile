@@ -47,11 +47,16 @@ get-package-versions:
     print(f"Keras version: {keras.__version__}")
     print(f"NumPy version: {numpy.__version__}")
 
-onnx2tf:
+torch2onnx width="512" height="512":
+    uv run craft_text_detector/convert_pth_to_onnx.py --input_shape {{ width }} {{ height }}
+
+onnx2tf onnx_filepath:
     docker run --rm -it \
         -v `pwd`:/workdir \
         -w /workdir \
-        docker.io/pinto0309/onnx2tf:latest
+        docker.io/pinto0309/onnx2tf:latest \
+        onnx2tf -i {{ onnx_filepath }}
+
 # Then run: onnx2tf -i model.onnx
 
 # Git add all files
