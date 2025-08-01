@@ -7,8 +7,8 @@ devenv_root = "/home/topher/PathwaysGI/craft-text-detector";
 devenv_dotfile = ./.devenv;
 devenv_dotfile_string = ".devenv";
 container_name = null;
-devenv_tmpdir = "/run/user/1000";
-devenv_runtime = "/run/user/1000/devenv-ae112c0";
+devenv_tmpdir = "/tmp";
+devenv_runtime = "/tmp/devenv-ae112c0";
 devenv_istesting = false;
 devenv_direnvrc_latest_version = 1;
 
@@ -30,8 +30,8 @@ devenv_root = "/home/topher/PathwaysGI/craft-text-detector";
 devenv_dotfile = ./.devenv;
 devenv_dotfile_string = ".devenv";
 container_name = null;
-devenv_tmpdir = "/run/user/1000";
-devenv_runtime = "/run/user/1000/devenv-ae112c0";
+devenv_tmpdir = "/tmp";
+devenv_runtime = "/tmp/devenv-ae112c0";
 devenv_istesting = false;
 devenv_direnvrc_latest_version = 1;
 
