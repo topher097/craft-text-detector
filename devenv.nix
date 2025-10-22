@@ -87,8 +87,6 @@ in {
 
   # Commands which run when the shell is started
   enterShell = ''
-    export UV_PROJECT_ENVIRONMENT=$(pwd)/.venv
-    export IO_DIR=$(pwd)/IO
     nvcc -V
 
     # Set the SSH agent if not already set
@@ -96,25 +94,6 @@ in {
       eval `ssh-agent -s`
       ssh-add $PRIVATE_SSH_PATH
     fi
-
-    uv tool install bump-my-version
-    uv tool update-shell
-
-    # Python environment setup
-    just ready-py
-
-    # Own the local directory
-    just 
-
-    # Add the included packages outputs to the LD_LIBRARY_PATH for easier linking
-    export DEVENV_LIB=$DEVENV_DOTFILE/profile/lib
-    export LD_LIBRARY_PATH=$DEVENV_LIB:$LD_LIBRARY_PATH
-
-    # Run the fish shell instead of bash
-    fish --init-command="source .venv/bin/activate.fish"
-
-    # When the command 'exit' is run to exit the fish shell, then the bash shell is run, so exit that
-    exit
   '';
 
   # Git pre-commit hooks, defined here. LINK: https://github.com/cachix/git-hooks.nix/tree/master

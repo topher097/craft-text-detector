@@ -156,3 +156,4 @@ tmp
 *.onnx
 saved_model*/
 .envrc.private
+.devenv.flake.nix
