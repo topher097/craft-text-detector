@@ -154,4 +154,9 @@ cython_debug/
 
 tmp
 *.onnx
-saved_model/
+saved_model*
+.envrc.private
+.devenv.flake.nix
+
+.direnv
+
