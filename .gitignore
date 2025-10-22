@@ -154,5 +154,5 @@ cython_debug/
 
 tmp
 *.onnx
-saved_model/
+saved_model*/
 .envrc.private

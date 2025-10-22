@@ -47,10 +47,10 @@ get-package-versions:
     print(f"Keras version: {keras.__version__}")
     print(f"NumPy version: {numpy.__version__}")
 
-torch2onnx width="512" height="512":
+torch2onnx width="512" height="512": own
     uv run craft_text_detector/convert_pth_to_onnx.py --input_shape {{ width }} {{ height }}
 
-onnx2tf onnx_filepath:
+onnx2tf onnx_filepath: own
     docker run --rm -it \
         -v `pwd`:/workdir \
         -w /workdir \
